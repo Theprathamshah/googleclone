@@ -11,6 +11,7 @@ export default function SearchHeader() {
 			<div className="flex w-full p-6 items-center justify-between">
 				<Link href={"/"}>
 					<Image
+						alt="Google logo"
 						width="120"
 						height="40"
 						src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/640px-Google_2015_logo.svg.png"
