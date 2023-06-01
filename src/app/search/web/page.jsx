@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default async function page({ searchParams }) {
@@ -7,6 +8,19 @@ export default async function page({ searchParams }) {
 	const data = await response.json();
 
 	const results = data.items;
+	if (!results) {
+		return (
+			<div className="flex flex-col justify-center items-center p-10 ">
+				<h1 className=" text-3xl mb-4">No result found</h1>
+				<p className=" text-lg">
+					Try searching something else or go back to home page.
+				</p>
+				<Link href={"/"} className=" text-blue-500">
+					Home
+				</Link>
+			</div>
+		);
+	}
 	return <div>{results && results.map((res) => <h1>{res.title}</h1>)}</div>;
 }
 
